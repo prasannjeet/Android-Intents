@@ -1,33 +1,112 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE LinearLayout [
+    <!ELEMENT LinearLayout (TextView|EditText|Button)*>
+    <!ATTLIST LinearLayout
+        xmlns:android CDATA #REQUIRED
+        xmlns:app CDATA #REQUIRED
+        xmlns:tools CDATA #REQUIRED
+        android:orientation CDATA #REQUIRED
+        android:layout_width CDATA #REQUIRED
+        android:layout_height CDATA #REQUIRED
+        tools:context CDATA #REQUIRED>
+    <!ELEMENT TextView (#PCDATA)>
+    <!ATTLIST TextView
+        android:layout_height CDATA #REQUIRED
+        android:layout_margin CDATA #REQUIRED
+        android:layout_width CDATA #REQUIRED
+        android:text CDATA #REQUIRED
+        android:textColor CDATA #REQUIRED
+        android:textSize CDATA #REQUIRED
+        android:textStyle CDATA #REQUIRED>
+    <!ELEMENT EditText (#PCDATA)>
+    <!ATTLIST EditText
+        android:autofillHints CDATA #REQUIRED
+        android:hint CDATA #REQUIRED
+        android:id CDATA #REQUIRED
+        android:inputType CDATA #REQUIRED
+        android:layout_height CDATA #REQUIRED
+        android:layout_marginHorizontal CDATA #REQUIRED
+        android:layout_width CDATA #REQUIRED>
+    <!ELEMENT Button (#PCDATA)>
+    <!ATTLIST Button
+        android:layout_width CDATA #REQUIRED
+        android:layout_height CDATA #REQUIRED
+        android:id CDATA #REQUIRED
+        android:layout_margin CDATA #REQUIRED
+        android:text CDATA #REQUIRED
+        android:textSize CDATA #REQUIRED>]>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
     <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.035" />
-
-    <Button
-        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/home_fragment_button_text"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="102dp"
-        tools:ignore="MissingConstraints" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="@string/to"
+        android:textColor="@color/black"
+        android:layout_margin="16dp"
+        android:textSize="26sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/emailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:autofillHints="Enter Email"
+        android:hint="@string/email_address"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subject"
+        android:textColor="@color/black"
+        android:layout_margin="16dp"
+        android:textSize="26sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:autofillHints="Enter Subject"
+        android:hint="@string/subject_edit_box"
+        android:inputType="textEmailSubject" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/message"
+        android:textColor="@color/black"
+        android:layout_margin="16dp"
+        android:textSize="26sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="249dp"
+        android:layout_marginHorizontal="16dp"
+        android:autofillHints="Enter Message"
+        android:hint="@string/message_edit_box"
+        android:inputType="text" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/sendButton"
+        android:layout_margin="26dp"
+        android:text="@string/send_button_message"
+        android:textSize="26sp" />
+
+
+
+
+
+
+</LinearLayout>
