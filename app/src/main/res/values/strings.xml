@@ -17,6 +17,6 @@
     <string name="subject">Subject:</string>
     <string name="message">Message:</string>
     <string name="subject_edit_box">Enter email subject</string>
-    <string name="message_edit_box">Type your message here...</string>
-    <string name="send_button_message">SEND</string>
+    <string name="message_edit_box">Type your message here…</string>
+    <string name="send_button_message">Send Email Intent</string>
 </resources>

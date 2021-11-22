@@ -36,27 +36,24 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
 
         Button sendButton = binding.sendButton;
-        sendButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                 String email = binding.emailAddress.getText().toString();
-                 String subject = binding.subject.getText().toString();
-                 String message = binding.message.getText().toString();
+        sendButton.setOnClickListener(v -> {
+             String email = binding.emailAddress.getText().toString();
+             String subject = binding.subject.getText().toString();
+             String message = binding.message.getText().toString();
 
-                 String[] addresses = email.split(",");
+             String[] addresses = email.split(",");
 
-                 Intent intent = new Intent(Intent.ACTION_SENDTO);
-                 intent.setData(Uri.parse("mailto:"));
-                 intent.putExtra(Intent.EXTRA_EMAIL, addresses);
-                 intent.putExtra(Intent.EXTRA_SUBJECT, subject);
-                 intent.putExtra(Intent.EXTRA_TEXT, message);
+             Intent intent = new Intent(Intent.ACTION_SENDTO);
+             intent.setData(Uri.parse("mailto:"));
+             intent.putExtra(Intent.EXTRA_EMAIL, addresses);
+             intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+             intent.putExtra(Intent.EXTRA_TEXT, message);
 
-                 if (intent.resolveActivity(requireContext().getPackageManager()) != null) {
-                     startActivity(intent);
-                 } else {
-                     Toast.makeText(getActivity(), "No App is Installed", Toast.LENGTH_SHORT).show();
-                 }
-            }
+             if (intent.resolveActivity(requireContext().getPackageManager()) != null) {
+                 startActivity(intent);
+             } else {
+                 Toast.makeText(getActivity(), "No App is Installed", Toast.LENGTH_SHORT).show();
+             }
         });
 
         return root;
